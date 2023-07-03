@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="static/css/style.css">
+    <title>Previsao do tempo</title>
+</head>
+<body>
+    <div class="container">
+
+        <div class="search-box">
+            <form method="post">
+                <input type="text" id="nome_cidade" name="nome_cidade" placeholder="Insira o nome da cidade">
+                <button tyoe="submit">Buscar</button>
+            </form>
+        </div>
+
+        {% if result %}
+        <div class="weather_details {% if result %}fade-in{% endif %}">
+            <p>{{result.results.city}}</p>
+            <img src="{{ image_path }}" draggable="false">
+            <div class="symbols-and-text">
+              <div class="info-thermometer">
+                <span class="material-symbols-outlined">thermometer</span>
+                <p class="info-value">temperatura: {{ result.results.temp }}</p>
+              </div>
+              <div class="info-clear-day">
+                <span class="material-symbols-outlined">clear_day</span>
+                <p class="info-value">descricao: {{ result.results.description }}</p>
+              </div>
+              <div class="rain-probability">
+                <span class="material-symbols-outlined">weather_mix</span>
+                <p class="info-value">chance de chuva: {{ result.results.forecast[0].rain_probability }} %</p>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+    </div>
+</body>
+</html>
