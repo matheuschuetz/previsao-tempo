@@ -19,3 +19,9 @@ pip install -r requirements.txt
 #Executar o projeto
 
 flask run 
+
+
+
+
+
+###Nao sou detentor de nehuma das imagens ou icones utilizados no projeto###
