@@ -25,3 +25,4 @@ flask run
 
 
 ###Nao sou detentor de nehuma das imagens ou icones utilizados no projeto###
+Credits to: Reza Mehdikhanlou
